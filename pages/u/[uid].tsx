@@ -11,7 +11,6 @@ const gun = Gun('https://dougun.herokuapp.com/gun')
 const User = ({}) => {
   const router = useRouter()
   const { uid, listName } = router.query
-  console.log('###', router.query)
   const [list, setList] = useState([])
   useEffect(() => {
     if (uid) {
@@ -26,13 +25,13 @@ const User = ({}) => {
         const doulist = gun.get(uid)
         const _list = []
         doulist.map().on((item, id) => {
-          console.log('###', item)
           _list.push(item)
         })
         setList(_list)
       }
     }
   }, [uid, listName])
+
   return (
     <Layout title={uid}>
       <div className={styles.content}>

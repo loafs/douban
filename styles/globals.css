@@ -20,3 +20,12 @@ a {
   width: 800px;
   border-bottom: 1px solid #e3e3e3;
 }
+
+.gun-button {
+  display: none;
+}
+
+.btn-reshare,
+.reshared-count {
+  display: none;
+}
