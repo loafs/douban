@@ -14,3 +14,9 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.i-status-wrap {
+  padding: 20px 10px;
+  width: 800px;
+  border-bottom: 1px solid #e3e3e3;
+}
