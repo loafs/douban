@@ -3358,8 +3358,7 @@ body {
 .status-item .mod .reshared_by {
   margin: 0;
   padding: 0 0 0 20px;
-  background: url(/f/sns/9730b092b7b6f96b3f380d43df17e4bac57a4afe/pics/icon/new-reshared-icon@2x.png)
-    no-repeat left center;
+  background: url(/new-reshared-icon@2x.png) no-repeat left center;
   background-size: 20px;
   background-position-x: -2px;
   color: #37a;

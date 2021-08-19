@@ -1,0 +1,14 @@
+.content {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 32px;
+  padding: 10px 0;
+  border-bottom: 4px solid #e3e3e3;
+}
+
+.listLink {
+  font-size: 24px;
+}
