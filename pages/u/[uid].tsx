@@ -6,7 +6,7 @@ import styles from '../../styles/User.module.css'
 import DouList from '../../components/DouList'
 import ListWrap from '../../components/ListWrap'
 
-const gun = Gun('https://dougun.herokuapp.com/gun')
+const gun = Gun('https://doujia.herokuapp.com/gun')
 
 const User = ({}) => {
   const router = useRouter()

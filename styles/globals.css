@@ -29,3 +29,49 @@ a {
 .reshared-count {
   display: none;
 }
+
+header {
+  height: 60px;
+  padding: 10px 50px;
+  border-bottom: 1px solid #e3e3e3;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+header .site-name {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 40px;
+  margin-left: 10px;
+  color: green;
+}
+
+.home-page h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.home-page p {
+  font-size: 16px;
+}
+
+.home-page p a {
+  text-decoration: none;
+  border-bottom: 2px solid yellow;
+}
+
+.home-page .sample {
+  border: 1px solid #333 !important;
+}
+
+.txt-clipping {
+  padding: 0.2rem 0.5rem;
+  vertical-align: middle;
+  /* background-color: #fff;
+  background-color: var(--color-sheet); */
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  border-radius: 0.5rem;
+  background: linear-gradient(90deg, #fee5da 0, #fff5ca 100%);
+}
