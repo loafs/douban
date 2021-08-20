@@ -6,14 +6,13 @@ import styles from '../../styles/User.module.css'
 import DouList from '../../components/DouList'
 import ListWrap from '../../components/ListWrap'
 
-const gun = Gun('https://doujia.herokuapp.com/gun')
-
 const User = ({}) => {
   const router = useRouter()
   const { uid, listName } = router.query
   const [list, setList] = useState([])
   useEffect(() => {
     if (uid) {
+      const gun = Gun('https://doujia.herokuapp.com/gun')
       if (listName) {
         const doulist = gun.get(`${uid}/${listName}`)
         const _list = []
