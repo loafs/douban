@@ -6,7 +6,7 @@ import Layout from '../components/Layout'
 class Home extends React.Component {
   render() {
     return (
-      <Layout title="豆荚">
+      <Layout title="豆荚" withFooter>
         <div className="home-page" style={{ margin: '0 auto', width: 800 }}>
           <h2>简介</h2>
           <p>[豆荚]是一款用于收集豆瓣广播的 Chrome 插件。</p>

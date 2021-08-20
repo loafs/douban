@@ -3,9 +3,16 @@ import React from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+import { GitHub, Mail } from 'react-feather'
 import styles from '../styles/Home.module.css'
 
-const Layout = ({ title, children }) => {
+interface Props {
+  title: string
+  children: any
+  withFooter?: boolean
+}
+
+const Layout = ({ title, children, withFooter }: Props) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -24,7 +31,20 @@ const Layout = ({ title, children }) => {
       </header>
       <main className={styles.main}>{children}</main>
 
-      <footer className={styles.footer}></footer>
+      {withFooter && (
+        <footer className={styles.footer}>
+          <Link
+            href="https://github.com/loafs/chrome-extension-douban"
+            passHref
+          >
+            <GitHub style={{ margin: '0 10px' }} />
+          </Link>
+
+          <Link href="mailto:chezhe@hey.com" passHref>
+            <Mail style={{ margin: '0 10px' }} />
+          </Link>
+        </footer>
+      )}
     </div>
   )
 }
