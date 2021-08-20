@@ -47,7 +47,8 @@ class Home extends React.Component {
           <ol>
             <li>
               <p>
-                1. <a href="/doujia.crx">下载</a>并安装插件
+                1. <a href="/jkhgjpbbfdgchmfhogeidbefbinialfp_main.crx">下载</a>
+                并安装插件
               </p>
             </li>
             <li>
