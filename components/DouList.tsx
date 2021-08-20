@@ -6,6 +6,7 @@ const DouList = ({ list }: Props) => {
   return (
     <div>
       {list.map((status) => {
+        if (!status.sid) return null
         return (
           <div
             key={status.sid}

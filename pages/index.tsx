@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 import React from 'react'
 import Image from 'next/image'
 import Layout from '../components/Layout'
@@ -38,6 +39,10 @@ class Home extends React.Component {
             height="300"
             className="sample"
           />
+          <p>
+            真实效果可以点击 <a href="/u/50116284">链接</a>
+            查看，如果未显示内容，刷新一下
+          </p>
           <h2>使用</h2>
           <ol>
             <li>
@@ -49,7 +54,9 @@ class Home extends React.Component {
               <p>2. 点击插件图标，创建豆列</p>
             </li>
             <li>
-              <p>3. 刷新豆瓣页面，在每条广播下会显示“收藏到[豆荚]”</p>
+              <p>
+                3. 登录状态下，刷新豆瓣页面，在每条广播下会显示“收藏到[豆荚]”
+              </p>
             </li>
             <li>
               <p>4. 点击“收藏到[豆荚]”，会出现选择框，选择豆列</p>

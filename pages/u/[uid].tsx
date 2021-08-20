@@ -1,51 +1,93 @@
-import { useEffect, useState } from 'react'
-import { useRouter } from 'next/router'
+import { Component, useEffect, useState } from 'react'
+require('gun/lib/load.js')
 import Gun from 'gun'
 import Layout from '../../components/Layout'
 import styles from '../../styles/User.module.css'
 import DouList from '../../components/DouList'
 import ListWrap from '../../components/ListWrap'
 
-const User = ({}) => {
-  const router = useRouter()
-  const { uid, listName } = router.query
-  const [list, setList] = useState([])
-  useEffect(() => {
+interface Props {
+  listName?: string
+  uid: string
+}
+
+interface State {
+  list: any[]
+}
+class User extends Component<Props, State> {
+  constructor(props) {
+    super(props)
+    this.state = {
+      list: [],
+    }
+  }
+
+  gun = null
+
+  componentDidMount() {
+    this.gun = Gun('https://doujia.herokuapp.com/gun')
+    this.fetch()
+  }
+
+  fetch = () => {
+    const { uid, listName } = this.props
     if (uid) {
-      const gun = Gun('https://doujia.herokuapp.com/gun')
       if (listName) {
-        const doulist = gun.get(`${uid}/${listName}`)
-        const _list = []
-        doulist.map().on((item, id) => {
-          _list.push(item)
+        const doulist = this.gun.get(`${uid}/${listName}`)
+        doulist.open((result) => {
+          this.setState({
+            list: Object.values(result)
+              .map((t: any) => {
+                return {
+                  uid: t.uid,
+                  sid: t.sid,
+                  content: t.content,
+                }
+              })
+              .filter((t) => t.sid),
+          })
         })
-        setList(_list)
       } else {
-        const doulist = gun.get(uid)
-        const _list = []
-        doulist.map().on((item, id) => {
-          _list.push(item)
+        const doujia = this.gun.get(uid)
+
+        doujia.open((result) => {
+          this.setState({
+            list: Object.values(result).filter((t) => t),
+          })
         })
-        setList(_list)
       }
     }
-  }, [uid, listName])
+  }
 
-  return (
-    <Layout title={`${uid} 的豆荚`}>
-      <div className={styles.content}>
-        <h2 className={styles.title}>
-          <a href={`/u/${uid}`}>{uid}</a>
-          {listName ? <span>{`/${listName}`}</span> : <span>{' 的豆荚'}</span>}
-        </h2>
-        {listName ? (
-          <DouList list={list} />
-        ) : (
-          <ListWrap list={list} uid={uid} />
-        )}
-      </div>
-    </Layout>
-  )
+  render() {
+    const { list } = this.state
+    const { uid, listName } = this.props
+    return (
+      <Layout title={`${uid} 的豆荚`}>
+        <div className={styles.content}>
+          <h2 className={styles.title}>
+            <a href={`/u/${uid}`}>{uid}</a>
+            {listName ? (
+              <span>{`/${listName}`}</span>
+            ) : (
+              <span>{' 的豆荚'}</span>
+            )}
+          </h2>
+          {listName ? (
+            <DouList list={list} />
+          ) : (
+            <ListWrap list={list} uid={uid} />
+          )}
+        </div>
+      </Layout>
+    )
+  }
+}
+
+export async function getServerSideProps(context) {
+  return {
+    props: context.query,
+  }
 }
 
 export default User
