@@ -33,11 +33,11 @@ const User = ({}) => {
   }, [uid, listName])
 
   return (
-    <Layout title={uid}>
+    <Layout title={`${uid} 的豆荚`}>
       <div className={styles.content}>
         <h2 className={styles.title}>
           <a href={`/u/${uid}`}>{uid}</a>
-          {listName ? <span>{`/${listName}`}</span> : <span>{' 的豆列'}</span>}
+          {listName ? <span>{`/${listName}`}</span> : <span>{' 的豆荚'}</span>}
         </h2>
         {listName ? (
           <DouList list={list} />
