@@ -19,6 +19,7 @@ const Layout = ({ title, children, withFooter }: Props) => {
         <title>{title}</title>
         <meta name="description" content="收藏豆瓣广播" />
         <link rel="icon" href="/favicon.ico" />
+        <meta name="referrer" content="no-referrer" />
       </Head>
 
       <header>
