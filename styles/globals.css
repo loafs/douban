@@ -59,6 +59,8 @@ header .site-name {
 .home-page p a {
   text-decoration: none;
   border-bottom: 2px solid yellow;
+  margin: 0 8px;
+  font-weight: 700;
 }
 
 .home-page .sample {
