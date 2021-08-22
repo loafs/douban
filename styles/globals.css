@@ -75,3 +75,15 @@ header .site-name {
   border-radius: 0.5rem;
   background: linear-gradient(90deg, #fee5da 0, #fff5ca 100%);
 }
+
+.topic-content .topic-doc {
+  width: 700px !important;
+}
+
+#link-report_group,
+#link-report_note,
+.sns-bar,
+.copyright-claim,
+.note-ft {
+  display: none;
+}
