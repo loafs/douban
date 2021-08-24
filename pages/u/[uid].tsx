@@ -48,9 +48,12 @@ class User extends Component<Props, State> {
           })
         })
       } else {
-        const doujia = this.gun.get(uid)
-
+        const doujia = this.gun.get(uid, (ack) => {
+          console.log('###', ack)
+        })
+        console.log('###', uid, listName)
         doujia.open((result) => {
+          console.log('###', result)
           this.setState({
             list: Object.values(result).filter((t) => t),
           })
