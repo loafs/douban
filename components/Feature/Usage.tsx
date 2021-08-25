@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable @next/next/no-html-link-for-pages */
 import Image from 'next/image'
 
@@ -8,7 +9,13 @@ const Usage = () => {
       <ol>
         <li>
           <p>
-            1. <a href="/jkhgjpbbfdgchmfhogeidbefbinialfp_main.crx">下载</a>
+            1.{' '}
+            <a
+              href="https://chrome.google.com/webstore/detail/%E8%B1%86%E8%8D%9A/jkhgjpbbfdgchmfhogeidbefbinialfp"
+              target="_blank"
+            >
+              下载
+            </a>
             并安装插件
           </p>
         </li>
