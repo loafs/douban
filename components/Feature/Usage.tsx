@@ -57,6 +57,15 @@ const Usage = () => {
       <p>
         如果你有任何使用问题，<a href="mailto:chezhe@hey.com">写邮件</a>给我
       </p>
+      <p>
+        PS:
+        该插件仍处于测试阶段，目前使用的去中心化数据库有可能会被懂技术的人滥用，接下来计划迁移到{' '}
+        <a href="https://zh.wikipedia.org/wiki/%E6%98%9F%E9%99%85%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F">
+          IFPS
+        </a>{' '}
+        上
+      </p>
+      <p></p>
     </div>
   )
 }
