@@ -20,6 +20,11 @@ const Layout = ({ title, children, withFooter }: Props) => {
         <meta name="description" content="收藏豆瓣广播" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="referrer" content="no-referrer" />
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-RZ80DJ5MQ6"
+        ></script>
+        <script async src="/scripts/ga.js"></script>
       </Head>
 
       <header>
